@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: aliceblue;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.titulo {
+    margin-top: 2rem;
+    margin-left: 35rem;
+    display: flex;
+    height: 100px;
+    width: 500px;
+    background-size: 400% 400%;
+    flex-direction: column;
+    background-color: #af2d2d;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.titulo h1 {
+    color: #ffffff;
+    padding: 5px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.titulo h2 {
+    color: #ffffff;
+    padding: 5px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+
+.memory-game {
+    height: 640px;
+    width: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.card {
+    height: calc(33.333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(1, 1, 1, .3);
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .9s;
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform .3s;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #ffffff;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
